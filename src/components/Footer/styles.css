@@ -1,0 +1,22 @@
+.footer {
+  padding: 1rem 10% 2rem;
+  background-color: #FFF;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.2;
+  flex-wrap: wrap;
+}
+
+.footer > * {
+  flex-grow: 1;
+  min-width: 120px;
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

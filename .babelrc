@@ -1,0 +1,39 @@
+{
+  "presets": [
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    [
+      "extensible-destructuring",
+      {
+        "mode": "optout",
+        "impl": "immutable"
+      }
+    ],
+    "react-hot-loader/babel",
+    "transform-object-assign"
+  ],
+  "env": {
+    "production": {
+      "only": [
+        "src",
+      ],
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements",
+        "transform-react-inline-elements",
+        [
+          "lodash",
+          {
+            "id": [
+              "lodash",
+              "recompose"
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}

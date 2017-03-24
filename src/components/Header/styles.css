@@ -1,0 +1,67 @@
+.header {
+  font-weight: 100;
+  transition: all 0.15s ease-out;
+  padding: 0 10%;
+}
+
+.logo {
+  margin-top: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.offTop {
+  border-bottom: 1px solid #EEE;
+}
+
+.menu {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  & > div {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+
+    & a {
+      text-align: center;
+      color: #FFF;
+      text-decoration: none;
+      display: block;
+      padding: 8px 20px;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+
+    &:nth-child(7n-6) {
+      background-color: $green;
+    }
+
+    &:nth-child(7n-5) {
+      background-color: $orange;
+    }
+
+    &:nth-child(7n-4) {
+      background-color: $green;
+    }
+
+    &:nth-child(7n-3) {
+      background-color: $gray;
+    }
+
+    &:nth-child(7n-2) {
+      background-color: $orange;
+    }
+
+    &:nth-child(7n-1) {
+      background-color: $gray;
+    }
+
+    &:nth-child(7n) {
+      background-color: $green;
+    }
+  }
+}

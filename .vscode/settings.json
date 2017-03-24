@@ -1,0 +1,12 @@
+{
+    "vsicons.presets.angular": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/dist": true,
+        "**/.vscode": true,
+        ".yarnclean": true
+    }   
+}

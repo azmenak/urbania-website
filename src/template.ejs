@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <% metaTags.forEach(function(tag) { %>
+    <meta name="<%= tag.name %>" property="<%= tag.property %>" content="<%= tag.content %>">
+    <% }) %>
+    <script id="config">
+      window.__INITIAL_STATE__ = <%= JSON.stringify(state) %>;
+    </script>
+    <% css.forEach(function(file) { %>
+    <link href="/<%= file %>" rel="stylesheet">
+    <% }) %>
+  </head>
+  <body>
+    <div id="entry"><%= html %></div>
+    <% js.forEach(function(file) { %>
+    <script type="text/javascript" src="/<%= file %>" async></script>
+    <% }) %>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.button {
+  background: #2675AA;
+  border: 1px solid #2675AA;
+  color: #FFF;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 3px;
+  text-align: center;
+  user-select: none;
+  outline: none !important;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.disabled {
+  background: #DDD;
+  border: #AAA;
+  cursor: not-allowed;
+}
