@@ -1,0 +1,15 @@
+.featuresContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem -1rem 0;
+}
+
+.feature {
+  flex-basis: 291px;
+  flex-grow: 1;
+  margin: 1rem;
+
+  & img {
+    max-width: 200px;
+  }
+}

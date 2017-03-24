@@ -7,20 +7,18 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import { history } from '../../router';
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import BrowserState from '../../containers/BrowserState';
 
 import paths from '../../paths';
 import Homepage from '../../components/Homepage';
 import ContactPage from '../../components/ContactPage';
-import PrivacyPage from '../../components/PrivacyPage';
-import TermsPage from '../../components/TermsPage';
 import NotFoundPage from '../../components/NotFoundPage';
+import FeaturesPage from '../../components/FeaturesPage';
 
 import classes from './theme.css';
 
 const theme = getMuiTheme({
-  fontFamily: '"Proxima Nova", "Helvetica Neue", sans-serif',
+  fontFamily: '"Helvetica Neue", "Helvetica", sans-serif',
   palette: {
     primary1Color: '#8CCBF2',
     accent1Color: '#979797',
@@ -48,23 +46,17 @@ export default function App({ location }) {
                 />
                 <Route
                   exact
+                  component={FeaturesPage}
+                  path={paths.FEATURES}
+                />
+                <Route
+                  exact
                   component={ContactPage}
                   path={paths.CONTACT}
-                />
-                <Route
-                  exact
-                  component={PrivacyPage}
-                  path={paths.PRIVACY}
-                />
-                <Route
-                  exact
-                  component={TermsPage}
-                  path={paths.TERMS}
                 />
                 <Route component={NotFoundPage} />
               </Switch>
             </div>
-            <Footer />
           </div>
         </div>
       </MuiThemeProvider>

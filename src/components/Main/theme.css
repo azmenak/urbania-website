@@ -1,8 +1,7 @@
 :root {
   --serifFontFamily: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  --sansFontFamily: 'Proxima Nova', 'Helvetica Neue', sans-serif;
+  --sansFontFamily: 'Helvetica Neue', 'Helvetica', sans-serif;
   --fontFamily: var(--sansFontFamily);
-  --primary1Color: #8CCBF2;
 }
 
 * {
