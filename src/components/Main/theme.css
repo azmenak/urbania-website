@@ -10,6 +10,7 @@
 
 html * {
   font-family: var(--fontFamily);
+  font-weight: 300;
 }
 
 p {
@@ -22,11 +23,13 @@ body {
 }
 
 h1 {
+  margin-top: 0;
   font-size: 3rem;
   font-weight: 100;
 }
 
 h2 {
+  margin-top: 0;
   font-size: 1.3rem;
   font-weight: 100;
 }
@@ -34,14 +37,9 @@ h2 {
 h3 {
   font-size: 1rem;
   margin-bottom: 0.6rem;
-  padding-bottom: 0.6rem;
-  font-weight: 600;
+  font-weight: 500;
+  color: $orange;
   text-transform: uppercase;
-  border-bottom: 1px solid #DDD;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
 }
 
 h4 {

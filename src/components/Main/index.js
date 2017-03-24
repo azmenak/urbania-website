@@ -14,6 +14,7 @@ import Homepage from '../../components/Homepage';
 import ContactPage from '../../components/ContactPage';
 import NotFoundPage from '../../components/NotFoundPage';
 import FeaturesPage from '../../components/FeaturesPage';
+import SublimePage from '../../components/SublimePage';
 
 import classes from './theme.css';
 
@@ -48,6 +49,11 @@ export default function App({ location }) {
                   exact
                   component={FeaturesPage}
                   path={paths.FEATURES}
+                />
+                <Route
+                  exact
+                  component={SublimePage}
+                  path={paths.SUBLIME}
                 />
                 <Route
                   exact

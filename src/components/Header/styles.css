@@ -2,6 +2,8 @@
   font-weight: 100;
   transition: all 0.15s ease-out;
   padding: 0 10%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -9,10 +11,6 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-}
-
-.offTop {
-  border-bottom: 1px solid #EEE;
 }
 
 .menu {

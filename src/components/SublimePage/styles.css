@@ -1,0 +1,31 @@
+.layout {
+  display: flex;
+
+  & > div {
+    &:nth-child(1) {
+      min-width: 254px;
+      padding-right: 2rem;
+    }
+
+    &:nth-child(2) {
+      flex-grow: 1;
+    }
+  }
+}
+
+dl {
+  & div {
+    display: flex;
+    margin: 3px 0;
+    justify-content: space-between;
+
+    & dt::after {
+      content: ': ';
+    }
+
+    & dd {
+      margin: 0;
+      text-align: right;
+    }
+  }
+}

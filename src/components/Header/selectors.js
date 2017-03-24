@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import getBrowser from 'selectors/browser';
+import getBrowser from '../../selectors/browser';
 
 export default createSelector(
   getBrowser,

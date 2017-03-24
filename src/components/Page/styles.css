@@ -1,3 +1,5 @@
 .page {
   padding: 0 10%;
+  max-width: 1200px;
+  margin: 2rem auto;
 }
