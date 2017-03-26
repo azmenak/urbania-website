@@ -16,6 +16,7 @@ import NotFoundPage from '../../components/NotFoundPage';
 import FeaturesPage from '../../components/FeaturesPage';
 import SublimePage from '../../components/SublimePage';
 import LarchPage from '../../components/LarchPage';
+import DealersPage from '../../components/DealersPage';
 
 import classes from './theme.css';
 
@@ -60,6 +61,11 @@ export default function App({ location }) {
                   exact
                   component={LarchPage}
                   path={paths.LARCH}
+                />
+                <Route
+                  exact
+                  component={DealersPage}
+                  path={paths.DEALERS}
                 />
                 <Route
                   exact

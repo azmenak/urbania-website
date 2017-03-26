@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const _ = require('lodash');
 const env = require('./env.json');
+const state = require('./state.json');
 const fs = require('fs');
 
 const paths = _.values(require('./src/paths'));
@@ -16,10 +17,6 @@ try {
 } catch (err) {
   release = 'development';
 }
-
-const state = {
-  title: 'URBANIA',
-};
 
 module.exports = (config = {}) => {
   const PRODUCTION = process.env.NODE_ENV === 'production';

@@ -66,6 +66,7 @@ LogoSvg.propTypes = {
     'md', 'medium',
     'lg', 'large',
     'sm', 'small',
+    'full-width',
   ]),
 };
 
