@@ -1,7 +1,7 @@
 .header {
   font-weight: 100;
   transition: all 0.15s ease-out;
-  padding: 0 10%;
+  padding: 0 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }

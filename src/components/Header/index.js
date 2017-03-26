@@ -34,7 +34,7 @@ function Header(props) {
             <div><NavLink activeClassName={classes.active} to={paths.HOME}>Home</NavLink></div>
             <div><NavLink activeClassName={classes.active} to={paths.FEATURES}>Features</NavLink></div>
             <div><NavLink activeClassName={classes.active} to={paths.SUBLIME}>Sublime</NavLink></div>
-            <div><NavLink activeClassName={classes.active} to={paths.DEALERS}>Features</NavLink></div>
+            <div><NavLink activeClassName={classes.active} to={paths.DEALERS}>Dealers</NavLink></div>
             <div><NavLink activeClassName={classes.active} to={paths.GRADES}>Grades</NavLink></div>
             <div><NavLink activeClassName={classes.active} to={paths.GALLERY}>Gallery</NavLink></div>
             <div><NavLink activeClassName={classes.active} to={paths.CONTACT}>Contact</NavLink></div>

@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+import paths from '../../paths';
 import Page from '../../components/Page';
 
 import classes from './styles.css';
@@ -61,6 +63,10 @@ export default () => (
             <dd>Shrink wrapped boxes, 2.109m² (22.704ft²) per box</dd>
           </div>
         </dl>
+
+        <div>
+          <p><Link to={paths.LARCH}>More information about Siberian Larch</Link></p>
+        </div>
       </div>
       <div>
         <h1>URBANIA Sublime Product Collection</h1>
