@@ -19,22 +19,29 @@ const mapStoreToMarker = store => ({
 const Composed = Base => compose(
   connect(mapStateToProps),
   withProps(({ dispatch }) => ({
-    onMarkerClick: (_, i) => dispatch(dealerActions.setCurrent(i)),
+    onMarkerClick: (store, i) => dispatch(dealerActions.setCurrent(i, store.toObject())),
+    onMapLoad: gmap => dispatch(dealerActions.gmapLoaded(() => gmap)),
   }))
 )(Base);
 
 const WrappedGoogleMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
-      defaultCenter={{ lat: 43.7067558, lng: -79.6378779 }}
-      defaultZoom={7}
+      center={props.center.toObject()}
+      defaultZoom={10}
       ref={props.onMapLoad}
-      onClick={props.onMapClick}
     >
       {props.stores.map((store, i) =>
         <Marker
           key={`${store.get('lat')}-${store.get('lng')}`}
           {...mapStoreToMarker(store)}
+          label={props.currentIndex !== i ? null : {
+            labelOrigin: {
+              x: 0,
+              y: 30,
+            },
+            text: store.get('name'),
+          }}
           onClick={() => props.onMarkerClick(store, i)}
         />
       )}
@@ -42,7 +49,7 @@ const WrappedGoogleMap = withScriptjs(
   ))
 );
 
-const Map = ({ stores, ...props }) => (
+const Map = props => (
   <WrappedGoogleMap
     containerElement={<div style={{ height: 400 }} />}
     googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${CONFIG.googleMapsApiKey}`}
@@ -50,13 +57,13 @@ const Map = ({ stores, ...props }) => (
       <div>Loading</div>
     }
     mapElement={<div style={{ height: '100%' }} />}
-    stores={stores}
     {...props}
   />
 );
 
 Map.propTypes = {
   stores: ImmutableProps.list,
+  center: ImmutableProps.map,
 };
 
 export default Composed(Map);
