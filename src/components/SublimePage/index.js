@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import paths from '../../paths';
 import Page from '../../components/Page';
 
-import classes from './styles.css';
+import './styles.css';
+import theme from '../../components/Main/theme.css';
 
 export default () => (
   <Page>
-    <div className={classes.layout}>
+    <div className={theme.layout}>
       <div>
         <h2>Specs</h2>
 
