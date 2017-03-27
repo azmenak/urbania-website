@@ -10,7 +10,7 @@ nconf.file(path.resolve(__dirname, 'env.json'));
 
 nconf.defaults({
   env: process.env.NODE_ENV || 'development',
-  s3Bucket: 'urbaniacanada.com',
+  s3Bucket: 'new.urbaniacanada.com',
   distDir: path.resolve(__dirname, 'dist'),
   port: 9000,
   // firebase: {
