@@ -67,6 +67,8 @@ export default () => (
 
         <div>
           <p><Link to={paths.LARCH}>More information about Siberian Larch</Link></p>
+          <p><Link to={paths.WARRANTY}>Warranty information for URBANIA products</Link></p>
+          <p><Link to={paths.GRADES}>Information on product grading</Link></p>
         </div>
       </div>
       <div>

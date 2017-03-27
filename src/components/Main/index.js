@@ -18,6 +18,7 @@ import SublimePage from '../../components/SublimePage';
 import LarchPage from '../../components/LarchPage';
 import DealersPage from '../../components/DealersPage';
 import GradesPage from '../../components/GradesPage';
+import WarrantyPage from '../../components/WarrantyPage';
 
 import classes from './theme.css';
 
@@ -72,6 +73,11 @@ export default function App({ location }) {
                   exact
                   component={GradesPage}
                   path={paths.GRADES}
+                />
+                <Route
+                  exact
+                  component={WarrantyPage}
+                  path={paths.WARRANTY}
                 />
                 <Route
                   exact
