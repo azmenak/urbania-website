@@ -1,14 +1,12 @@
 import React from 'react';
+import { compose, withProps } from 'recompose';
 import ImmutableProps from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import withScriptjs from 'react-google-maps/lib/async/withScriptjs';
 
+import * as dealerActions from '../../actions/dealers';
 import mapStateToProps from './selectors';
-
-const onMarkerClick = (marker, store) => {
-  console.log(event, store.toJS());
-};
 
 const mapStoreToMarker = store => ({
   position: {
@@ -18,6 +16,12 @@ const mapStoreToMarker = store => ({
   title: store.get('name'),
 });
 
+const Composed = Base => compose(
+  connect(mapStateToProps),
+  withProps(({ dispatch }) => ({
+    onMarkerClick: (_, i) => dispatch(dealerActions.setCurrent(i)),
+  }))
+)(Base);
 
 const WrappedGoogleMap = withScriptjs(
   withGoogleMap(props => (
@@ -31,14 +35,14 @@ const WrappedGoogleMap = withScriptjs(
         <Marker
           key={`${store.get('lat')}-${store.get('lng')}`}
           {...mapStoreToMarker(store)}
-          onClick={event => props.onMarkerClick(event, store, i)}
+          onClick={() => props.onMarkerClick(store, i)}
         />
       )}
     </GoogleMap>
   ))
 );
 
-const Map = ({ stores }) => (
+const Map = ({ stores, ...props }) => (
   <WrappedGoogleMap
     containerElement={<div style={{ height: 400 }} />}
     googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${CONFIG.googleMapsApiKey}`}
@@ -47,7 +51,7 @@ const Map = ({ stores }) => (
     }
     mapElement={<div style={{ height: '100%' }} />}
     stores={stores}
-    onMarkerClick={onMarkerClick}
+    {...props}
   />
 );
 
@@ -55,4 +59,4 @@ Map.propTypes = {
   stores: ImmutableProps.list,
 };
 
-export default connect(mapStateToProps)(Map);
+export default Composed(Map);
